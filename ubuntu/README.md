@@ -6,4 +6,4 @@ build:
 
 run:
 
-   $ ./run.sh
+    $ ./run.sh
