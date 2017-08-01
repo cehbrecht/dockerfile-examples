@@ -14,6 +14,7 @@ RUN \
           byobu
 
 VOLUME ["/opt"]
+VOLUME ["/data"]
 
 WORKDIR /opt
 
