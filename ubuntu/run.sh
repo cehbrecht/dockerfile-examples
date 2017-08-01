@@ -9,6 +9,7 @@ docker run \
   -p 8094:8094 \
   -p 8095:8095 \
   -p 8096:8096 \
+  -v data:/data \
   -v ubuntudev:/opt \
   -v /Users/pingu/sandbox/birdhouse:/opt/birdhouse/src \
   ubuntu/dev
