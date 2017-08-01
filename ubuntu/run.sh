@@ -7,6 +7,8 @@ docker run \
   -p 8092:8092 \
   -p 8093:8093 \
   -p 8094:8094 \
+  -p 8095:8095 \
+  -p 8096:8096 \
   -v ubuntudev:/opt \
   -v /Users/pingu/sandbox/birdhouse:/opt/birdhouse/src \
   ubuntu/dev
