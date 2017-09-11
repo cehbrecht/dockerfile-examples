@@ -24,6 +24,12 @@ ADD etc/credentials.conf /etc/synda/sdt/credentials.conf
 # data dir
 RUN mkdir /data && chown -R synda.synda /data
 
-# less /var/log/synda/sdt/transfer.log
-# CMD ["/bin/bash"]
-CMD ["/usr/share/python/synda/sdt/bin/sddaemon.py", "start"]
+# copy start script
+ADD start-services.sh /etc/start-services.sh
+RUN chmod +x /etc/start-services.sh
+
+# VOLUMES
+VOLUME /data
+VOLUME /var/lib/synda
+
+CMD ["/etc/start-services.sh"]
