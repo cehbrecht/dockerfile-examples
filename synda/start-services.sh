@@ -10,6 +10,10 @@
 # keep external environment
 set -o allexport
 
+# update uid
+groupmod -g 2001 data
+usermod -g data -G synda,data -u 2001 data
+
 # update permissions
 chown -R data.data /var/tmp/synda/sdt
 chown -R data.data /var/log/synda/sdt/
