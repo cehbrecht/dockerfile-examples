@@ -5,7 +5,7 @@ MAINTAINER Carsten Ehbrecht <ehbrecht@dkrz.de>
 RUN \
   yum update -y && \
   yum install epel-release -y && \
-  yum install -y wget vim byobu
+  yum install -y wget myproxy openssl vim byobu less telnet file
 
 # install synda
 RUN wget http://sd-104052.dedibox.fr/synda/sdt/rpm/synda-3.8-1.x86_64_centos71.rpm
@@ -14,4 +14,16 @@ RUN yum install -y synda-3.8-1.x86_64_centos71.rpm
 # patch myproxyclient
 RUN /usr/share/python/synda/sdt/bin/pip install myproxyclient==2.0.1
 
-CMD ["/bin/bash"]
+# add synda user
+RUN useradd -g synda synda
+
+# default config
+ADD etc/sdt.conf /etc/synda/sdt/sdt.conf
+ADD etc/credentials.conf /etc/synda/sdt/credentials.conf
+
+# data dir
+RUN mkdir /data && chown -R synda.synda /data
+
+# less /var/log/synda/sdt/transfer.log
+# CMD ["/bin/bash"]
+CMD ["/usr/share/python/synda/sdt/bin/sddaemon.py", "start"]
