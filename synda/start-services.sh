@@ -10,8 +10,12 @@
 # keep external environment
 set -o allexport
 
+# update permissions
+chown -R data.data /var/tmp/synda/sdt
+chown -R /var/log/synda/sdt/
+
 # update certificate
-su synda -c "synda certificate renew"
+su data -c "synda certificate renew"
 
 # start synda
 /usr/share/python/synda/sdt/bin/sddaemon.py start
