@@ -17,7 +17,9 @@ su synda -c "synda certificate renew"
 /usr/share/python/synda/sdt/bin/sddaemon.py start
 
 # show logs
-tail -f /var/log/synda/sdt/transfer.log
+#sleep 2
+#tail -n 100 /var/log/synda/sdt/transfer.log
+echo "check /var/log/synda/sdt/transfer.log"
 
 # loop for ever
 #sleep infinity
