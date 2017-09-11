@@ -1,0 +1,8 @@
+version: '2'
+services:
+  synda:
+    image: synda
+    hostname: localhost
+    volumes:
+      - lib:/var/lib/synda
+      - data:/data

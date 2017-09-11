@@ -1,12 +1,10 @@
-# Run synda service
+# Synda service in Docker
 
-    $ docker run --rm -it -v etc/credentials.conf:/etc/synda/sdt/credentials.conf  /bin/bash
-    # update cert
-    > su - synda
-    > synda certificate renew
-    > exit
-    # start service
-    > /usr/share/python/synda/sdt/bin/sddaemon.py start
-    > /usr/share/python/synda/sdt/bin/sddaemon.py status
-    # check logs
-    > less /var/log/synda/sdt/transfer.log
+## Run synda with docker-compose
+
+    $ docker-compose up -d
+    
+## Run synda service manually
+
+    $ docker run --rm -it -v $PWD/etc/mycreds.conf:/etc/synda/sdt/credentials.conf synda /bin/bash
+    > /etc/start-services.sh
