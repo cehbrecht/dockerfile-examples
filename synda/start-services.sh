@@ -12,7 +12,7 @@ set -o allexport
 
 # update permissions
 chown -R data.data /var/tmp/synda/sdt
-chown -R /var/log/synda/sdt/
+chown -R data.data /var/log/synda/sdt/
 
 # update certificate
 su data -c "synda certificate renew"
