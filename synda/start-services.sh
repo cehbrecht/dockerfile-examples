@@ -11,12 +11,14 @@
 set -o allexport
 
 # update uid
-groupmod -g 2001 data
-usermod -g data -G synda,data -u 2001 data
+groupmod -g $GID data
+usermod -g data -G synda,data -u $UID data
 
 # update permissions
+#chown -R data.data /data
 chown -R data.data /var/tmp/synda/sdt
-chown -R data.data /var/log/synda/sdt/
+chown -R data.data /var/log/synda/sdt
+chown -R data.data /var/lib/synda/sdt
 
 # update certificate
 su data -c "synda certificate renew"
@@ -28,6 +30,7 @@ su data -c "synda certificate renew"
 #sleep 2
 #tail -n 100 /var/log/synda/sdt/transfer.log
 echo "check /var/log/synda/sdt/transfer.log"
+echo "synda daemon status"
 
 # loop for ever
 #sleep infinity

@@ -13,8 +13,10 @@ RUN yum install -y synda-3.8-1.x86_64_centos71.rpm && \
   /usr/share/python/synda/sdt/bin/pip install myproxyclient==2.0.1
 
 # add data user
-RUN groupadd data
-RUN useradd -g data -G synda,data data
+ENV GID 1001
+ENV UID 1001
+RUN groupadd -g $GID data
+RUN useradd -g data -G synda,data -u $UID data
 
 # default config
 ADD etc/sdt.conf /etc/synda/sdt/sdt.conf
