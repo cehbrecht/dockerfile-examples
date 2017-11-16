@@ -13,6 +13,8 @@ RUN \
           git \
           byobu
 
+ENV PATH /opt/anaconda/bin:$PATH
+
 VOLUME ["/opt"]
 VOLUME ["/data"]
 
