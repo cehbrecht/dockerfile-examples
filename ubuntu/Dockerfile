@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 MAINTAINER Carsten Ehbrecht <ehbrecht@dkrz.de>
+LABEL Description="ubuntu dev" Vendor="Mac Pingu" Version="0.2"
 
 RUN \
   apt-get update && \
