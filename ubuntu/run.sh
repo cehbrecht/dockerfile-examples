@@ -15,4 +15,5 @@ docker run \
   -v data:/data \
   -v ubuntudev:/opt \
   -v /Users/pingu/sandbox/birdhouse:/opt/birdhouse/src \
+  -v /Users/pingu/sandbox/cp4cds:/opt/copernicus/src \
   ubuntu/dev
