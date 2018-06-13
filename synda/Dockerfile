@@ -1,5 +1,6 @@
 FROM centos:7
 MAINTAINER Carsten Ehbrecht <ehbrecht@dkrz.de>
+LABEL Description="synda" Vendor="Carsten Ehbrecht" Version="3.8"
 
 # prepare centos
 RUN \
@@ -19,14 +20,14 @@ RUN groupadd -g $GID data
 RUN useradd -g data -G synda,data -u $UID data
 
 # default config
-ADD etc/sdt.conf /etc/synda/sdt/sdt.conf
-ADD etc/credentials.conf /etc/synda/sdt/credentials.conf
+COPY etc/sdt.conf /etc/synda/sdt/sdt.conf
+COPY etc/credentials.conf /etc/synda/sdt/credentials.conf
 
 # data dir
 RUN mkdir /data && chown -R data.data /data
 
 # copy start script
-ADD start-services.sh /etc/start-services.sh
+COPY start-services.sh /etc/start-services.sh
 RUN chmod +x /etc/start-services.sh
 
 # VOLUMES
