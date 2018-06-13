@@ -1,6 +1,6 @@
 FROM centos:7
 MAINTAINER Carsten Ehbrecht <ehbrecht@dkrz.de>
-LABEL Description="synda" Vendor="Carsten Ehbrecht" Version="3.8"
+LABEL Description="synda" Vendor="Carsten Ehbrecht" Version="3.9"
 
 # prepare centos
 RUN \
@@ -9,8 +9,8 @@ RUN \
   yum install -y wget myproxy openssl vim byobu less telnet file
 
 # install synda
-RUN wget http://sd-104052.dedibox.fr/synda/sdt/rpm/synda-3.8-1.x86_64_centos71.rpm
-RUN yum install -y synda-3.8-1.x86_64_centos71.rpm && \
+RUN wget http://sd-104052.dedibox.fr/synda/sdt/rpm/synda-3.9-1.x86_64_centos71.rpm
+RUN yum install -y synda-3.9-1.x86_64_centos71.rpm && \
   /usr/share/python/synda/sdt/bin/pip install myproxyclient==2.0.1
 
 # add data user
