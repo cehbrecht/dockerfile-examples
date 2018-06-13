@@ -16,8 +16,8 @@ RUN yum install -y synda-3.9-1.x86_64_centos71.rpm && \
 # add data user
 ENV GID 1001
 ENV UID 1001
-RUN groupadd -g $GID data
-RUN useradd -g data -G synda,data -u $UID data
+RUN groupadd -g $GID data && \
+  useradd -g data -G synda,data -u $UID data
 
 # default config
 COPY etc/sdt.conf /etc/synda/sdt/sdt.conf
