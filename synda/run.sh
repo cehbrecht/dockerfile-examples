@@ -5,4 +5,4 @@ docker run --name synda --rm -it \
   -v synda_lib:/var/lib/synda \
   -e UID=1001 \
   -e GID=1001 \
-  synda /bin/bash
+  cehbrecht/synda /bin/bash

@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --rm -t synda .
+docker build --rm -t cehbrecht/synda .
