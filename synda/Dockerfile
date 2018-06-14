@@ -34,4 +34,5 @@ RUN chmod +x /etc/start-services.sh
 VOLUME /data
 VOLUME /var/lib/synda
 
-CMD ["/etc/start-services.sh"]
+# CMD ["/etc/start-services.sh"]
+CMD ["/bin/bash"]
