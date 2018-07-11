@@ -9,6 +9,7 @@ RUN \
           gcc-c++ \
           make \
           vim \
+          bzip2 \
           unzip \
           curl \
           wget \
