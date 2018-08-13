@@ -3,17 +3,10 @@ docker run \
   --name ubuntudev \
   --rm -it \
   -p 5000:5000 \
+  -p 8080:8080 \
   -p 8081:8081 \
   -p 8443:8443 \
-  -p 8090:8090 \
-  -p 8091:8091 \
-  -p 8092:8092 \
-  -p 8093:8093 \
-  -p 8094:8094 \
-  -p 8095:8095 \
-  -p 8096:8096 \
   -v data:/data \
   -v ubuntudev:/opt \
-  -v /Users/pingu/sandbox/birdhouse:/opt/birdhouse/src \
-  -v /Users/pingu/sandbox/cp4cds:/opt/copernicus/src \
+  -v /Users/pingu/Documents/GitHub:/opt/src \
   ubuntu/dev
