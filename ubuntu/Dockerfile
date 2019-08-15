@@ -17,7 +17,6 @@ RUN \
 ENV PATH /opt/anaconda/bin:$PATH
 
 VOLUME ["/opt"]
-VOLUME ["/data"]
 
 WORKDIR /opt
 
