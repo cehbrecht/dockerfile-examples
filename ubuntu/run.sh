@@ -10,5 +10,4 @@ docker run \
   -p 8093:8093 \
   -v ubuntudev:/opt \
   -v /Users/pingu/Documents/GitHub:/opt/src \
-  -v /Users/pingu/data:/opt/data \
   ubuntu/dev
