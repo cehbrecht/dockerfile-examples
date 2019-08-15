@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --rm -t ubuntu/dev .
+docker build --rm -t debian/dev .

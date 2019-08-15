@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM conda/miniconda3:latest
 MAINTAINER Carsten Ehbrecht <ehbrecht@dkrz.de>
-LABEL Description="ubuntu dev" Vendor="Mac Pingu" Version="0.3"
+LABEL Description="debian dev" Vendor="Mac Pingu" Version="0.4"
 
 RUN \
   apt-get update && \
@@ -13,8 +13,6 @@ RUN \
           wget \
           git \
           byobu
-
-ENV PATH /opt/anaconda/bin:$PATH
 
 VOLUME ["/opt"]
 
