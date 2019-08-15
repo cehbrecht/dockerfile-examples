@@ -14,6 +14,8 @@ RUN \
           git \
           byobu
 
+RUN conda init bash
+
 VOLUME ["/opt"]
 
 WORKDIR /opt
