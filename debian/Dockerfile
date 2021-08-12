@@ -15,8 +15,7 @@ RUN \
           byobu
 
 RUN conda init bash
-
-VOLUME ["/opt"]
+RUN conda install -c conda-forge mamba
 
 WORKDIR /opt
 
