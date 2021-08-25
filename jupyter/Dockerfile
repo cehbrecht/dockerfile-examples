@@ -17,9 +17,19 @@ USER ${NB_UID}
 
 # Install Python 3 packages
 RUN mamba install --quiet --yes \
+    'bokeh' \
+    'jupyter_bokeh' \
+    'bottleneck' \
+    'cloudpickle' \
+    'conda-forge::blas=*=openblas' \
+    'cython' \
+    'dill' \
     'dask' \
     'dask-memusage' \
     'filprofiler' \
+    'nbresuse' \
+    'jupyterlab-topbar' \
+    'jupyterlab-system-monitor' \
     'matplotlib' \
     'pandas' \
     'intake' \
@@ -32,8 +42,6 @@ RUN mamba install --quiet --yes \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
-
-WORKDIR /tmp
 
 # Import matplotlib the first time to build the font cache.
 ENV XDG_CACHE_HOME="/home/${NB_USER}/.cache/"
