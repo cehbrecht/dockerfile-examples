@@ -1,9 +1,14 @@
 # Debian Dev Container
 
-build:
+See jupyter docker docs:
+https://jupyter-docker-stacks.readthedocs.io/en/latest/
 
-    $ ./build.sh
+build:
+```
+$ ./build.sh
+```
 
 run:
-
-    $ ./run.sh
+```
+$ ./run.sh
+```
