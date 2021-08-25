@@ -17,13 +17,17 @@ USER ${NB_UID}
 
 # Install Python 3 packages
 RUN mamba install --quiet --yes \
-    'bokeh' \
-    'conda-forge::blas=*=openblas' \
-    'cython' \
     'dask' \
-    'dill' \
+    'dask-memusage' \
+    'filprofiler' \
     'matplotlib' \
     'pandas' \
+    'intake' \
+    'intake-esm' \
+    'gcsfs' \
+    'zarr' \
+    'fsspec' \
+    'netcdf4' \
     'xarray' && \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
