@@ -4,6 +4,6 @@ docker run \
   -p 8888:8888 \
   -e JUPYTER_ENABLE_LAB=yes \
   -v "${PWD}":/home/jovyan/work \
-  --cpus="1.0" \
-  --memory="512mb" \
+  --cpus="4.0" \
+  --memory="4048mb" \
   jupyter/dev
