@@ -38,6 +38,7 @@ RUN mamba install --quiet --yes \
     'zarr' \
     'fsspec' \
     'netcdf4' \
+    'humanize' \
     'xarray' && \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
