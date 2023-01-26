@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 MAINTAINER Carsten Ehbrecht <ehbrecht@dkrz.de>
 LABEL Description="centos dev" Vendor="Mac Pingu" Version="0.1"
 
